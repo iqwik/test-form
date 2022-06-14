@@ -1,0 +1,128 @@
+.steps {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 25px;
+    display: flex;
+
+    > span {
+        margin-left: 15px;
+        
+        .dot {
+            margin-right: 10px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: var(--disable-color);
+    
+            &.active {
+                background-color: var(--text-color);
+            }
+        }
+    }
+
+}
+
+.headingParagraph {
+    margin: 40px 0;
+}
+.formWrapper {
+    max-width: 480px;
+    margin: auto;
+    
+    .LoginForm {
+        .inputWrapper {
+            position: relative;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            
+            :global() {
+                input, select {
+                    outline: none;
+                    padding: var(--form-field-padding);
+                    border: 1px solid var(--border-color);
+                    border-radius: 4px;
+                    line-height: var(--normal-line-height);
+                    color: var(--heading-color);
+                    background-color: transparent;
+                    z-index: 1;
+        
+                    & + label {
+                        position: absolute;
+                        top: 11px;
+                        left: 15px;
+                        color: var(--heading-color);
+                        font-weight: 400;
+                    }
+                }
+        
+                input {
+                    & + label {
+                        transition: top 0.15s linear, left 0.15s linear, font-size 0.15s linear, background-color 0.15s linear;
+                        animation-delay: 0s;
+                    }
+        
+                    &:focus + label, &.filled + label {
+                        display: block;
+                        z-index: 11;
+                        top: -15px;
+                        font-size: var(--mini-font-size);
+                        background-color: #FFF;
+                        padding: 2px;
+                    }
+                }
+        
+                select:valid + label {
+                    display: none;
+                }   
+                
+            }
+        
+            &.error {
+                :global() {
+                    label {
+                        color: var(--error-color);
+                    }
+            
+                    input, select {
+                        border-color: var(--error-color);
+                    }
+                }
+            
+                .errorText {
+                    position: relative;
+                    margin-top: 10px;
+                    color: var(--error-color);
+                    font-size: var(--mini-font-size);
+                }
+            }
+        }
+    }
+
+    :global() {
+        button[type="button"] {
+            width: 100%;
+            outline: none;
+            border: 0;
+            border-radius: 4px;
+            background-color: var(--link-color);
+            color: #FFF;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: var(--letter-spacing);
+            line-height: 25px;
+            padding: 12px;
+            cursor: pointer;
+            margin: 30px auto 40px;
+
+            &:disabled {
+                background-color: var(--border-color);
+                color: var(--disable-color);
+            }
+        }
+    }
+}

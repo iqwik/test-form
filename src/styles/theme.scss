@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+select::-ms-expand {
+    display: none;
+  }
+
+select {
+    position: relative;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: inherit;
+    outline: none;
+}
+
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: var(--normal-font-size);
+    line-height: var(--normal-line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+h1 {
+    margin: 0p;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: bold;
+}
+
+.link {
+    font-size: 13px;
+    line-height: 25px;
+    font-weight: bold;
+    color: var(--link-color);
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+}
+
+.d-flex {
+    @include display-flex();
+}
+
+main {
+    height: 100%;
+}
+
+.left-side {
+    height: 100%;
+    position: relative;
+    flex: 1;
+    @include display-flex();
+}
+.right-side {
+    height: 100%;
+    background-color: var(--link-color);
+    flex: 0 0 630px;
+    color: #FFF;
+    @include display-flex();
+
+    > div {
+        h1 {
+            text-align: center;
+            margin: 0 0 78px 0;
+        }
+    
+        p {
+            font-size: 18px;
+            max-width: 340px;
+            margin: auto;
+        }
+    }
+
+}

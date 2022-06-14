@@ -1,0 +1,18 @@
+$font-path: "../assets/fonts/";
+
+:root {
+    --text-color: #333;
+    --heading-color: #777;
+    --border-color: #EDEDED;
+    --error-color: #F53C3C;
+    --disable-color: #AAA;
+    --link-color: #286EFA;
+    --normal-font-size: 15px;
+    --normal-line-height: 30px;
+    --mini-font-size: 12px;
+    --letter-spacing: 0.26px;
+    --form-field-padding: 10px 15px;
+    --select-arrow: var(--border-color);
+}
+
+@import "./_mixins.scss";
